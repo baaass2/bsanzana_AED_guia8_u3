@@ -2,8 +2,8 @@ prefix=/usr/local
 CC = g++
 
 CFLAGS = -g -Wall 
-SRC = Programa.cpp
-OBJ = Programa.o
+SRC = Programa.cpp Ordenamiento.cpp 
+OBJ = Programa.o Ordenamiento.o
 APP = Programa
 
 all: $(OBJ)
