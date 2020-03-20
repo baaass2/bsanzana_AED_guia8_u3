@@ -9,6 +9,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	
+	/* Validaciones del programa. */
 	if(argv[1] == NULL or argv[2] == NULL or argv[0] == NULL ){
 		cout<< "ERROR: Faltan parámetros. " << endl;
 		return 0;
@@ -21,16 +22,22 @@ int main(int argc, char *argv[]) {
 		cout << "Error: el primer parámetro debe ser un número" << endl;
         exit(1);
     }
+    
+    /* Objeto que contiene los metodos de ordenamiento. */
 	Ordenamiento ordenar;
+	
+	/* Arreglo que contendrá los tiempos de los metedos de or. */
 	double tiempo[7];
 	int N = stoi(argv[1]);
 	
+	/* Validacion que N no supera un millón de datos. */
 	if(N > 1000000 or N <= 0){
 		cout<< "ERROR: número no valido " << endl;
 		cout<< "reinicie el programa. " << endl;
 		return 0;
 	}
 	
+	/* Creción de vectores que contendrán los numeros aleatorios */
 	string par = (1,argv[2]);
 	 
 	int* array = new int[N];
@@ -41,12 +48,13 @@ int main(int argc, char *argv[]) {
 	int* array5 = new int[N];
 	int* array6 = new int[N];
 	
-
+	/* Codigo de creación de numeros aleatorios */
 	for (int i=0; i<N; i++){
 		int num = (rand() % N) + 1;
 		array[i] = num;
 	}
 	
+	/* Vectores contendrán los mismos elementos */
 	for (int i=0; i<N; i++){
 		array1[i] = array[i];
 		array2[i] = array[i];

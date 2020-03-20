@@ -195,9 +195,6 @@ void Ordenamiento::quicksort(int* array, int start, int end){
     }
 }
 
-		
-
-
 int Ordenamiento::divideQuicksort(int* array, int start, int end) {
     int left;
     int right;
@@ -236,7 +233,7 @@ void Ordenamiento::imprimir(int* array, int N, string S){
 			cout<< " "<< array[i] << ", ";		
 		}
 	cout << "" << endl;
-	}
+}
 	
 
 
