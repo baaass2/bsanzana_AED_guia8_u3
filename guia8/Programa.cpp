@@ -43,21 +43,20 @@ int main(int argc, char *argv[]) {
 		array6[i] = array[i];	
 	}
 	
-	cout<< "argv2: " << argv[2] << endl;
-
 	if((par.compare("VER")) == 0){
+		cout<< "DATOS DESORDENADOS:  "<< endl;
 		for (int i=0; i<N; i++){
 			cout<< " "<< array[i] << ", ";		
 		}
 	cout << "" << endl;
 	}
 	
-	tiempo[0] = ordenar.burbujaMayor(array, N);
-	tiempo[1] = ordenar.burbujaMenor(array1, N);	
-	tiempo[2] = ordenar.insercion(array2,N);	
-	tiempo[3] = ordenar.insercionBinaria(array3, N);
-	tiempo[4] = ordenar.seleccion(array4, N);
-	tiempo[5] = ordenar.shell(array5,N);
+	tiempo[0] = ordenar.burbujaMayor(array, N, par);
+	tiempo[1] = ordenar.burbujaMenor(array1, N, par);	
+	tiempo[2] = ordenar.insercion(array2,N, par);	
+	tiempo[3] = ordenar.insercionBinaria(array3, N, par);
+	tiempo[4] = ordenar.seleccion(array4, N, par);
+	tiempo[5] = ordenar.shell(array5,N, par);
 	
 	clock_t time;
 	time = clock();
@@ -66,7 +65,17 @@ int main(int argc, char *argv[]) {
 	ordenar.quicksort(array6, 0, N - 1);
 	
 	duracionQuicksort = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
-	tiempo[6] = duracionQuicksort; 
+	tiempo[6] = duracionQuicksort;
+	
+	
+	if((par.compare("VER")) == 0){
+		cout << "Quicksort: " << endl;
+		for (int i=0; i<N; i++){
+				cout<< " "<< array6[i] << ", ";		
+			}
+		cout << "" << endl;
+	}
+
 	
 	cout<< "Tiempo Burbuja Mayor:         " << tiempo[0] << " ms." << endl;
 	cout<< "Tiempo Burbuja Menor:         " << tiempo[1] << " ms." << endl;

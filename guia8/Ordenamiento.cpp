@@ -4,7 +4,7 @@
 Ordenamiento::Ordenamiento(){
 }
 
-double Ordenamiento::burbujaMayor(int array[], int N){
+double Ordenamiento::burbujaMayor(int* array, int N, string par ){
 	
 	clock_t time;
 	time = clock();
@@ -21,11 +21,16 @@ double Ordenamiento::burbujaMayor(int array[], int N){
 		}	
 	}
 	
-	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;	
+	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
+	
+	if((par.compare("VER")) == 0){	
+		imprimir(array, N, "BurbujaMayor");		
+	}
+	
 	return duracion;
 }
 
-double Ordenamiento::burbujaMenor(int array[], int N){
+double Ordenamiento::burbujaMenor(int array[], int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -42,12 +47,16 @@ double Ordenamiento::burbujaMenor(int array[], int N){
 		}	
 	}
 	
-	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;	
+	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
+	
+	if((par.compare("VER")) == 0){		
+		imprimir(array, N, "BurbujaMenor");
+	}
 	return duracion;
 }
 
 
-double Ordenamiento::insercion(int array[], int N){
+double Ordenamiento::insercion(int array[], int N, string par){
 
 	int temp;
 	int i, j;
@@ -67,10 +76,13 @@ double Ordenamiento::insercion(int array[], int N){
 	}
 
 	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
+	if((par.compare("VER")) == 0){		
+		imprimir(array, N, "Insercion");
+	}
 	return duracion;
 }
 
-double Ordenamiento::insercionBinaria(int array[], int N){
+double Ordenamiento::insercionBinaria(int array[], int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -100,10 +112,13 @@ double Ordenamiento::insercionBinaria(int array[], int N){
 	}
 
 	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;	
+	if((par.compare("VER")) == 0){		
+		imprimir(array, N, "InsercionBinaria");
+	}
 	return duracion;
 }
 
-double Ordenamiento::seleccion(int array[], int N){
+double Ordenamiento::seleccion(int array[], int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -124,10 +139,13 @@ double Ordenamiento::seleccion(int array[], int N){
 	}
 
 	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
+	if((par.compare("VER")) == 0){		
+		imprimir(array, N, "Seleccion");
+	}
 	return duracion;
 }
 
-double Ordenamiento::shell(int array[], int N){
+double Ordenamiento::shell(int array[], int N, string par){
 	
 
 	clock_t time;
@@ -157,7 +175,10 @@ double Ordenamiento::shell(int array[], int N){
 		}	
 	}
 	
-	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;	
+	duracion = ((clock() - time) / (double) CLOCKS_PER_SEC) * 1000 ;
+	if((par.compare("VER")) == 0){		
+		imprimir(array, N, "Shell");
+	}	
 	return duracion;
 }
 
@@ -207,4 +228,15 @@ int Ordenamiento::divideQuicksort(int array[], int start, int end) {
 
     return right;
 }
+
+void Ordenamiento::imprimir(int array[], int N, string S){
+	
+	cout << S << endl;
+	for (int i=0; i<N; i++){
+			cout<< " "<< array[i] << ", ";		
+		}
+	cout << "" << endl;
+	}
+	
+
 
