@@ -30,7 +30,7 @@ double Ordenamiento::burbujaMayor(int* array, int N, string par ){
 	return duracion;
 }
 
-double Ordenamiento::burbujaMenor(int array[], int N, string par){
+double Ordenamiento::burbujaMenor(int* array, int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -56,7 +56,7 @@ double Ordenamiento::burbujaMenor(int array[], int N, string par){
 }
 
 
-double Ordenamiento::insercion(int array[], int N, string par){
+double Ordenamiento::insercion(int* array, int N, string par){
 
 	int temp;
 	int i, j;
@@ -82,7 +82,7 @@ double Ordenamiento::insercion(int array[], int N, string par){
 	return duracion;
 }
 
-double Ordenamiento::insercionBinaria(int array[], int N, string par){
+double Ordenamiento::insercionBinaria(int* array, int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -118,7 +118,7 @@ double Ordenamiento::insercionBinaria(int array[], int N, string par){
 	return duracion;
 }
 
-double Ordenamiento::seleccion(int array[], int N, string par){
+double Ordenamiento::seleccion(int* array, int N, string par){
 	
 	clock_t time;
 	time = clock();
@@ -145,7 +145,7 @@ double Ordenamiento::seleccion(int array[], int N, string par){
 	return duracion;
 }
 
-double Ordenamiento::shell(int array[], int N, string par){
+double Ordenamiento::shell(int* array, int N, string par){
 	
 
 	clock_t time;
@@ -182,7 +182,7 @@ double Ordenamiento::shell(int array[], int N, string par){
 	return duracion;
 }
 
-void Ordenamiento::quicksort(int array[], int start, int end){
+void Ordenamiento::quicksort(int* array, int start, int end){
 
     int pivot;
  
@@ -198,7 +198,7 @@ void Ordenamiento::quicksort(int array[], int start, int end){
 		
 
 
-int Ordenamiento::divideQuicksort(int array[], int start, int end) {
+int Ordenamiento::divideQuicksort(int* array, int start, int end) {
     int left;
     int right;
     int pivot;
@@ -229,7 +229,7 @@ int Ordenamiento::divideQuicksort(int array[], int start, int end) {
     return right;
 }
 
-void Ordenamiento::imprimir(int array[], int N, string S){
+void Ordenamiento::imprimir(int* array, int N, string S){
 	
 	cout << S << endl;
 	for (int i=0; i<N; i++){

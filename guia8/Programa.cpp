@@ -10,28 +10,36 @@ using namespace std;
 int main(int argc, char *argv[]) {
 	
 	if(argv[1] == NULL or argv[2] == NULL or argv[0] == NULL ){
-		cout<< "ERROR:No haz ingrsado datos " << endl;
+		cout<< "ERROR: Faltan parámetros. " << endl;
 		return 0;
 	} 
+	
+	try{
+		char n = stoi(argv[1]);
+    }
+    catch (const std::invalid_argument& e){
+		cout << "Error: el primer parámetro debe ser un número" << endl;
+        exit(1);
+    }
 	Ordenamiento ordenar;
 	double tiempo[7];
 	int N = stoi(argv[1]);
 	
 	if(N > 1000000 or N <= 0){
-		cout<< "ERROR: numero no valido " << endl;
+		cout<< "ERROR: número no valido " << endl;
 		cout<< "reinicie el programa. " << endl;
 		return 0;
 	}
 	
 	string par = (1,argv[2]);
 	 
-	int array[N];
-	int array1[N];
-	int array2[N];
-	int array3[N];
-	int array4[N];
-	int array5[N];
-	int array6[N];
+	int* array = new int[N];
+	int* array1 = new int[N];
+	int* array2 = new int[N];
+	int* array3 = new int[N];
+	int* array4 = new int[N];
+	int* array5 = new int[N];
+	int* array6 = new int[N];
 	
 
 	for (int i=0; i<N; i++){
