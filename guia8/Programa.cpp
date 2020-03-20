@@ -3,11 +3,16 @@
 #include <stdio.h> 
 #include <time.h> 
 #include <string>
+#include <ctype.h>
 #include "Ordenamiento.h"
 using namespace std;
 
 int main(int argc, char *argv[]) {
 	
+	if(argv[1] == NULL or argv[2] == NULL or argv[0] == NULL ){
+		cout<< "ERROR:No haz ingrsado datos " << endl;
+		return 0;
+	} 
 	Ordenamiento ordenar;
 	double tiempo[7];
 	int N = stoi(argv[1]);
